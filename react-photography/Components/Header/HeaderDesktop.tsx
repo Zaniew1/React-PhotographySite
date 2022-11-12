@@ -1,17 +1,18 @@
 import { NavDesktop } from "../Nav/NavDesktop";
+import { useState, useEffect } from "react";
 import { CheckDateButton } from "../UI/CheckDateButton";
+import { Logo } from "./Logo";
 import classes from "./HeaderDesktop.module.css";
 export const HeaderDesktop: React.FC = (props) => {
   return (
-    <header>
-      <div className={classes.logo}>
-        <div className={classes.wrapper__logo}>
-          <div className={classes.logo__name}>Kamila Koziara</div>
-          <div className={classes.logo__proffesion}>fotografia ślubna</div>
-        </div>
+    <header className={classes.header}>
+      <div className={classes.header__wrapper}>
+        <Logo />
+        <NavDesktop />
       </div>
-      <NavDesktop />
-      <CheckDateButton />
+      <div className={classes.button__wrapper}>
+        <CheckDateButton />
+      </div>
     </header>
   );
 };

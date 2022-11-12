@@ -1,0 +1,8 @@
+.logo__name {
+  font-size: 22px;
+}
+.logo__proffesion {
+  font-size: 14px;
+  text-align: center;
+  text-transform: lowercase;
+}

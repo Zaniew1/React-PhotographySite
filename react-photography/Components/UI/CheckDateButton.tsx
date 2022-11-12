@@ -6,7 +6,7 @@ import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 export const CheckDateButton: React.FC = (props) => {
   return (
     <Link className={classes.nav__callendar} href="/contact">
-      <FontAwesomeIcon icon={faCalendar} />
+      <FontAwesomeIcon className={classes.callendar__icon} icon={faCalendar} />
       Sprawdź Datę
     </Link>
   );
