@@ -44,3 +44,8 @@
   font-size: 16px;
   padding: 10px 0;
 }
+.footer__icons__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
