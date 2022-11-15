@@ -37,15 +37,17 @@ export const Footer: React.FC = (props) => {
           <div className={classes.footer__contact}>
             <p className={classes.footer__header}>Kontakt</p>
             <div className={classes.footer__link}>Kamila.Koziara@gmail.com</div>
-            <div className={classes.footer__link}>+48 502 232 699</div>
-            {/* <div className={classes.footer__icons__wrap}> */}
-            <div className={classes.footer__icons}>
-              <FontAwesomeIcon icon={faFaceAngry} />
+            <div className={classes.footer__link}>
+              <a href="tel:+48502232699">+48 502 232 699</a>
             </div>
-            <div className={classes.footer__icons}>
-              <FontAwesomeIcon icon={faFaceAngry} />
+            <div className={classes.footer__icons__wrap}>
+              <div className={classes.footer__icons}>
+                <FontAwesomeIcon icon={faFaceAngry} />
+              </div>
+              <div className={classes.footer__icons}>
+                <FontAwesomeIcon icon={faFaceAngry} />
+              </div>
             </div>
-            {/* </div> */}
           </div>
         </div>
         <div className={classes.footer__check}>
