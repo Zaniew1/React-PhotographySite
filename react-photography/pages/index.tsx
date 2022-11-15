@@ -3,6 +3,7 @@ import { HeaderDesktop } from "../Components/Header/HeaderDesktop";
 import { Footer } from "../Components/Footer/Footer";
 import { useState, useEffect } from "react";
 import { useWidthSize } from "../hooks/Width-checker";
+import { Slider } from "../Components/Slider/Slider";
 
 export default function Home() {
   const widthSize = useWidthSize();
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       {!desktopResolution && <HeaderMobile />}
       {desktopResolution && <HeaderDesktop />}
+      <Slider />
       <Footer />
     </main>
   );

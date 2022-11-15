@@ -1,0 +1,14 @@
+.slider {
+  height: 100vh;
+}
+.slider__slider {
+  background-image: url("../../public/img/footerBgc.jpg");
+  background-position: center center;
+  height: 50%;
+  width: 100%;
+}
+.slider__wrapper {
+  height: 50%;
+  width: 100%;
+  background-color: #fff;
+}
