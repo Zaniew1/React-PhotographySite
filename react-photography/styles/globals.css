@@ -8,6 +8,7 @@ body {
 body {
   background-color: #555;
   height: 200vh;
+  overflow: hidden;
 }
 a {
   color: inherit;

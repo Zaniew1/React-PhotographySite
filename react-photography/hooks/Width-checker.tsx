@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useWidthSize = () => {
   const [widthSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
+    dynamicWidth: 0,
   });
   const setDimension = () => {
     getDimension({
