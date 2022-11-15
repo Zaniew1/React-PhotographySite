@@ -1,5 +1,4 @@
 import { NavDesktop } from "../Nav/NavDesktop";
-import { useState, useEffect } from "react";
 import { CheckDateButton } from "../UI/CheckDateButton";
 import { Logo } from "./Logo";
 import classes from "./HeaderDesktop.module.css";
