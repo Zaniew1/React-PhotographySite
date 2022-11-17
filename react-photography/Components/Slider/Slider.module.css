@@ -8,6 +8,7 @@
   width: 100%;
 }
 .slider__wrapper {
+  display: none;
   height: 50%;
   width: 100%;
   background-color: #fff;
