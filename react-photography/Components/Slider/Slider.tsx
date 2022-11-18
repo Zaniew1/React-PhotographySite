@@ -2,16 +2,12 @@ import classes from "./Slider.module.css";
 import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowAltCircleRight,
-  faArrowAltCircleLeft,
-  faSliders,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 type Numeric = number;
 const slider: { img: string; alt: string }[] = [
-  { img: "/../public/img/picture2.jpg", alt: "1" },
-  { img: "/../public/img/picture3.jpg", alt: "2" },
-  { img: "/../public/img/picture4.jpg", alt: "3" },
+  { img: "/../public/img/1.jpg", alt: "1" },
+  { img: "/../public/img/2.jpg", alt: "2" },
+  { img: "/../public/img/3.jpg", alt: "3" },
   { img: "/../public/img/picture1.jpg", alt: "4" },
 ];
 export const Slider: React.FC = (props) => {
@@ -29,12 +25,12 @@ export const Slider: React.FC = (props) => {
   return (
     <section className={classes.slider}>
       <FontAwesomeIcon
-        icon={faArrowAltCircleLeft}
+        icon={faAngleLeft}
         className={classes.slider__left}
         onClick={previousSlideHandler}
       />
       <FontAwesomeIcon
-        icon={faArrowAltCircleRight}
+        icon={faAngleRight}
         className={classes.slider__right}
         onClick={nextSlideHandler}
       />
@@ -44,7 +40,7 @@ export const Slider: React.FC = (props) => {
             key={Math.random()}
             className={
               index === current
-                ? classes.slider__slide__active
+                ? `${classes.slider__slide}${classes.slider__active}`
                 : classes.slider__slide
             }
           >
@@ -53,6 +49,7 @@ export const Slider: React.FC = (props) => {
                 src={slider.img}
                 alt={slider.alt}
                 layout="fill"
+                objectFit="cover"
                 className={classes.image}
               />
             )}
