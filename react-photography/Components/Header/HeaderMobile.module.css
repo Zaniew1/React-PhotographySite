@@ -10,11 +10,13 @@
   font-family: "Playfair", serif;
   text-transform: uppercase;
   z-index: 5;
+  transition: color 0.5s ease-in-out;
 }
 .header__active {
   top: 0;
   left: 0;
   color: #000;
+  transition: color 0.5s ease-in-out;
 }
 .wrapper__burger {
   display: flex;
@@ -53,4 +55,11 @@
 }
 .burger__active {
   background-color: #222;
+  height: 0;
+}
+.burger__active.burger::after {
+  transform: rotate(45deg);
+}
+.burger__active.burger::before {
+  transform: rotate(135deg);
 }

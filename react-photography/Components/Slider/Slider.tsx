@@ -22,6 +22,7 @@ export const Slider: React.FC = (props) => {
   if (!Array.isArray(slider) || slider.length <= 0) {
     return null;
   }
+
   return (
     <section className={classes.slider}>
       <div className={classes.slider__wrap}>
@@ -44,19 +45,18 @@ export const Slider: React.FC = (props) => {
               key={index}
               className={
                 index === current
-                  ? `${classes.slider__slide}${classes.slider__active}`
+                  ? `${classes.slider__slide} ${classes.slider__active}`
                   : classes.slider__slide
               }
             >
-              {index === current && (
-                <Image
-                  src={slider.img}
-                  alt={slider.alt}
-                  layout="fill"
-                  objectFit="cover"
-                  className={classes.image}
-                />
-              )}
+              <Image
+                key={index}
+                src={slider.img}
+                alt={slider.alt}
+                layout="fill"
+                objectFit="cover"
+                className={classes.image}
+              />
             </div>
           );
         })}
