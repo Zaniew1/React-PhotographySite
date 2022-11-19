@@ -24,38 +24,55 @@ export const Slider: React.FC = (props) => {
   }
   return (
     <section className={classes.slider}>
-      <FontAwesomeIcon
-        icon={faAngleLeft}
-        className={classes.slider__left}
-        onClick={previousSlideHandler}
-      />
-      <FontAwesomeIcon
-        icon={faAngleRight}
-        className={classes.slider__right}
-        onClick={nextSlideHandler}
-      />
-      {slider.map((slider, index) => {
-        return (
-          <div
-            key={Math.random()}
-            className={
-              index === current
-                ? `${classes.slider__slide}${classes.slider__active}`
-                : classes.slider__slide
-            }
-          >
-            {index === current && (
-              <Image
-                src={slider.img}
-                alt={slider.alt}
-                layout="fill"
-                objectFit="cover"
-                className={classes.image}
-              />
-            )}
-          </div>
-        );
-      })}
+      <div className={classes.slider__wrap}>
+        <div className={classes.slider__counter}>
+          {current + 1} / {slider.length}
+        </div>
+        <FontAwesomeIcon
+          icon={faAngleLeft}
+          className={classes.slider__left}
+          onClick={previousSlideHandler}
+        />
+        <FontAwesomeIcon
+          icon={faAngleRight}
+          className={classes.slider__right}
+          onClick={nextSlideHandler}
+        />
+        {slider.map((slider, index) => {
+          return (
+            <div
+              key={index}
+              className={
+                index === current
+                  ? `${classes.slider__slide}${classes.slider__active}`
+                  : classes.slider__slide
+              }
+            >
+              {index === current && (
+                <Image
+                  src={slider.img}
+                  alt={slider.alt}
+                  layout="fill"
+                  objectFit="cover"
+                  className={classes.image}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+      <div className={classes.slider__description}>
+        <p className={classes.slider__paragraph}>
+          Jestem przekonana, że Twoje zdjęcia – to Twoja spuścizna i że każdy,
+          kogo fotografuję pozostawia dla siebie niezapomnianą pamiątkę.
+        </p>
+        <p className={classes.slider__paragraph}>
+          Jako fotografka ślubnych imprez uważam, że powinnam pracować w różnych
+          stylach. Czerpię inspiracje z fotografii reklamowych i mody oraz ze
+          znanych prac wybitnych artystów, którzy dbają o grę światła w swoich
+          pracach, takich jak Rembrandt.
+        </p>
+      </div>
     </section>
   );
 };
