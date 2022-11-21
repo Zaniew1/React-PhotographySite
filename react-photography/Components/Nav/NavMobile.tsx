@@ -1,35 +1,59 @@
 import classes from "./NavMobile.module.css";
 import Link from "next/link";
+import { navigation } from "../../Data/Data";
+import { BooleanElement } from "../../Types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
 import { CheckDateButton } from "../UI/CheckDateButton";
-export const NavMobile: React.FC = (props) => {
+import { NavigationLinks } from "../UI/NavigationLinks";
+
+export const NavMobile: React.FC<BooleanElement> = (props): JSX.Element => {
   return (
-    <nav className={classes.nav}>
+    <nav
+      className={
+        props.drops ? classes.nav : `${classes.nav} ${classes.nav__active}`
+      }
+    >
       <div className={classes.nav__pictures}>
         <ul className={classes.pictures__list}>
-          <li className={classes.pictures__items}>
-            <Link href="/portfolio">Portfolio ślubne</Link>
+          <li
+            className={
+              props.drops
+                ? classes.pictures__items
+                : `${classes.pictures__items} ${classes.pictures__items__active}`
+            }
+          >
+            <Link className={classes.nav__linke} href="/portfolio">
+              Portfolio ślubne
+            </Link>
           </li>
-          <li className={classes.pictures__items}>
-            <Link href="/gallery">Galeria Zdjęć</Link>
+          <li
+            className={
+              props.drops
+                ? classes.pictures__items
+                : `${classes.pictures__items} ${classes.pictures__items__active}`
+            }
+          >
+            <Link className={classes.nav__linke} href="/gallery">
+              Galeria Zdjęć
+            </Link>
           </li>
         </ul>
       </div>
       <div className={classes.nav__links}>
         <ul className={classes.nav__list}>
-          <li className={classes.nav__items}>
-            <Link href="/offert">Oferta</Link>
-          </li>
-          <li className={classes.nav__items}>
-            <Link href="/about">O Mnie</Link>
-          </li>
-          <li className={classes.nav__items}>
-            <Link href="/opinion">Opinie</Link>
-          </li>
-          <li className={classes.nav__items}>
-            <Link href="/contact">Kontakt</Link>
-          </li>
+          {navigation.map((el) => {
+            return (
+              <NavigationLinks
+                key={Math.random()}
+                text={el.text}
+                classLi={classes.nav__items}
+                classLink={classes.nav__link}
+                classLinkActive={classes.nav__link__active}
+                path={el.path}
+              />
+            );
+          })}
         </ul>
       </div>
       <div className={classes.nav__date}>
