@@ -1,28 +1,32 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-type dropDownNav = boolean;
-type UiContextType = {
-  drop: boolean;
-  dropDownNav: (dropNav: dropDownNav) => void;
-};
+import { useWidthSize } from "../hooks/Width-checker";
+import React, { useState, useEffect } from "react";
+import { UiContextType } from "../Types/types";
 
 export const UIContext = React.createContext<UiContextType>({
-  drop: false,
+  drop: true,
+  desktopResolution: true,
   dropDownNav: (dropNav: boolean) => {},
 });
 
-export const WeatherContextProvider = (props: any) => {
+export const UiContextProvider = (props: any) => {
   const [dropDownNav, setDropDownNav] = useState<boolean>(true);
+
+  const [desktopResolution, setDesktopResolution] = useState(false);
+  const widthSize = useWidthSize();
+
   useEffect(() => {
-    if (dropDownNav) setDropDownNav(!dropDownNav);
-    else setDropDownNav(dropDownNav);
-  }, [dropDownNav]);
-  console.log(dropDownNav);
+    if (widthSize.dynamicWidth >= 768) {
+      setDesktopResolution(true);
+    } else {
+      setDesktopResolution(false);
+    }
+  }, [widthSize]);
 
   return (
     <UIContext.Provider
       value={{
         drop: dropDownNav,
+        desktopResolution: desktopResolution,
         dropDownNav: setDropDownNav,
       }}
     >
