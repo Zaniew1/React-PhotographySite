@@ -1,20 +1,12 @@
 import { HeaderMobile } from "../Components/Header/HeaderMobile";
 import { HeaderDesktop } from "../Components/Header/HeaderDesktop";
 import { Footer } from "../Components/Footer/Footer";
-import { useState, useEffect } from "react";
-import { useWidthSize } from "../hooks/Width-checker";
 import { Slider } from "../Components/Slider/Slider";
+import { UIContext } from "../Store/UI-context";
+import { useContext } from "react";
 
 export default function Home() {
-  const widthSize = useWidthSize();
-  const [desktopResolution, setDesktopResolution] = useState(false);
-  useEffect(() => {
-    if (widthSize.dynamicWidth >= 768) {
-      setDesktopResolution(true);
-    } else {
-      setDesktopResolution(false);
-    }
-  }, [widthSize]);
+  const { desktopResolution } = useContext(UIContext);
   return (
     <main>
       {!desktopResolution && <HeaderMobile />}
