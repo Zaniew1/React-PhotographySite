@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 
 export const useWidthSize = () => {
-  const [widthSize, getDimension] = useState({
-    dynamicWidth: 0,
-  });
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-    });
-  };
+  const [firstDimensionCall, setFirstDimensionCall] = useState(false);
+  const [widthSize, getDimension] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("resize", setDimension);
+    if (!firstDimensionCall) {
+      setFirstDimensionCall(true);
+      getDimension(window.innerWidth);
+    }
+    window.addEventListener("resize", () => getDimension(window.innerWidth));
 
     return () => {
-      window.removeEventListener("resize", setDimension);
+      window.removeEventListener("resize", () =>
+        getDimension(window.innerWidth)
+      );
     };
-  }, [widthSize]);
+  }, [firstDimensionCall, widthSize]);
   return widthSize;
 };

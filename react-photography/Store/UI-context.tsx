@@ -15,7 +15,7 @@ export const UiContextProvider = (props: any) => {
   const widthSize = useWidthSize();
 
   useEffect(() => {
-    if (widthSize.dynamicWidth >= 768) {
+    if (widthSize >= 768) {
       setDesktopResolution(true);
     } else {
       setDesktopResolution(false);
