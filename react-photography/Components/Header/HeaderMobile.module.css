@@ -9,7 +9,7 @@
   color: #fff;
   font-family: "Playfair", serif;
   text-transform: uppercase;
-  z-index: 99;
+  z-index: 200;
   transition: color 0.5s ease-in-out;
 }
 .header__active {

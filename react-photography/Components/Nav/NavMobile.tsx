@@ -1,6 +1,5 @@
 import classes from "./NavMobile.module.css";
-import Link from "next/link";
-import { navigation } from "../../Data/Data";
+import { navigation, navigationPictures } from "../../Data/Data";
 import { BooleanElement } from "../../Types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
@@ -15,33 +14,23 @@ export const NavMobile: React.FC<BooleanElement> = (props): JSX.Element => {
       }
     >
       <div className={classes.nav__pictures}>
-        <ul className={classes.pictures__list}>
-          <li
-            className={
-              props.drops
-                ? classes.pictures__items
-                : `${classes.pictures__items} ${classes.pictures__items__active}`
-            }
-          >
-            <Link className={classes.nav__linke} href="/portfolio">
-              Portfolio ślubne
-            </Link>
-          </li>
-          <li
-            className={
-              props.drops
-                ? classes.pictures__items
-                : `${classes.pictures__items} ${classes.pictures__items__active}`
-            }
-          >
-            <Link className={classes.nav__linke} href="/gallery">
-              Galeria Zdjęć
-            </Link>
-          </li>
+        <ul>
+          {navigationPictures.map((el) => {
+            return (
+              <NavigationLinks
+                key={Math.random()}
+                text={el.text}
+                classLi={classes.pictures__list}
+                classLink={classes.pictures__items}
+                classLinkActive={classes.pictures__items__active}
+                path={el.path}
+              />
+            );
+          })}
         </ul>
       </div>
       <div className={classes.nav__links}>
-        <ul className={classes.nav__list}>
+        <ul>
           {navigation.map((el) => {
             return (
               <NavigationLinks

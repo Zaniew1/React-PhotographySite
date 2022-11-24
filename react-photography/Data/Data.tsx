@@ -17,3 +17,14 @@ export const navigation = [
     path: "/contact",
   },
 ];
+
+export const navigationPictures = [
+  {
+    text: "Portfolio Slubne",
+    path: "/portfolio",
+  },
+  {
+    text: "Galeria zdjęć",
+    path: "/gallery",
+  },
+];

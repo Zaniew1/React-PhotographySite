@@ -26,19 +26,22 @@ export const Slider: React.FC = (props) => {
   return (
     <section className={classes.slider}>
       <div className={classes.slider__wrap}>
-        <div className={classes.slider__counter}>
-          {current + 1} / {slider.length}
+        <div className={classes.slider__navigation}>
+          <FontAwesomeIcon
+            icon={faAngleLeft}
+            className={classes.slider__left}
+            onClick={previousSlideHandler}
+          />
+          <div className={classes.slider__counter}>
+            {current + 1} / {slider.length}
+          </div>
+          <FontAwesomeIcon
+            icon={faAngleRight}
+            className={classes.slider__right}
+            onClick={nextSlideHandler}
+          />
         </div>
-        <FontAwesomeIcon
-          icon={faAngleLeft}
-          className={classes.slider__left}
-          onClick={previousSlideHandler}
-        />
-        <FontAwesomeIcon
-          icon={faAngleRight}
-          className={classes.slider__right}
-          onClick={nextSlideHandler}
-        />
+
         {slider.map((slider, index) => {
           return (
             <div
