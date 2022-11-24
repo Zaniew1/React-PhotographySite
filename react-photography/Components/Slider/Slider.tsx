@@ -65,11 +65,15 @@ export const Slider: React.FC = (props) => {
         })}
       </div>
       <div className={classes.slider__description}>
-        <p className={classes.slider__paragraph}>
+        <p
+          className={`${classes.slider__paragraph} ${classes.slider__paragraph__one}`}
+        >
           Jestem przekonana, że Twoje zdjęcia – to Twoja spuścizna i że każdy,
           kogo fotografuję pozostawia dla siebie niezapomnianą pamiątkę.
         </p>
-        <p className={classes.slider__paragraph}>
+        <p
+          className={`${classes.slider__paragraph} ${classes.slider__paragraph__two}`}
+        >
           Jako fotografka ślubnych imprez uważam, że powinnam pracować w różnych
           stylach. Czerpię inspiracje z fotografii reklamowych i mody oraz ze
           znanych prac wybitnych artystów, którzy dbają o grę światła w swoich
