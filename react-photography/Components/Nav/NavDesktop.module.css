@@ -2,13 +2,30 @@
   display: flex;
   color: #fff;
   font-size: 12px;
+  transition: ease 0.4s;
 }
-.nav__active {
+.nav__scrolled {
   color: #000;
 }
+.nav__scrolled .nav__li {
+  margin: 0 20px;
+  padding: 0;
+}
 .nav__initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
   opacity: 0;
   width: 0;
+}
+.nav__initials__scrolled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  width: 100px;
+  height: 100%;
 }
 .nav__navigation {
   display: flex;

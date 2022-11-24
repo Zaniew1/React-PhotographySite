@@ -2,10 +2,24 @@ import Link from "next/link";
 import classes from "./NavDesktop.module.css";
 import { navigation, navigationPictures } from "../../Data/Data";
 import { NavigationLinks } from "../UI/NavigationLinks";
+import { useScrollChecker } from "../../hooks/PageY-checker.tsx";
 export const NavDesktop: React.FC = (props) => {
+  const pageY = useScrollChecker();
   return (
-    <nav className={classes.nav}>
-      <div className={classes.nav__initials}>K&K</div>
+    <nav
+      className={
+        pageY <= 1 ? classes.nav : `${classes.nav} ${classes.nav__scrolled}`
+      }
+    >
+      <div
+        className={
+          pageY <= 1
+            ? classes.nav__initials
+            : `${classes.nav__initials} ${classes.nav__initials__scrolled}`
+        }
+      >
+        K&K
+      </div>
       <div className={classes.nav__navigation}>
         <div className={classes.nav__wrapper}>
           <ul className={classes.nav__wrapper}>

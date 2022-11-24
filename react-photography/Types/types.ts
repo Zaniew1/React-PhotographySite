@@ -12,3 +12,6 @@ export type UiContextType = {
   desktopResolution: boolean;
   dropDownNav: (dropNav: dropDownNav) => void;
 };
+// export type CheckDateButtonType = {
+//   class: string | null;
+// };

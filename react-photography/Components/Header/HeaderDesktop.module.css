@@ -7,6 +7,12 @@
   align-items: center;
   width: 100%;
   z-index: 99;
+  transition: ease 0.8s;
+}
+.header__scrolled {
+  padding: 10px;
+  background-color: #fff;
+  transition: ease 0.4s;
 }
 .header__wrapper {
   width: 70vw;
