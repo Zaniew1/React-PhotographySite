@@ -1,0 +1,23 @@
+.nav__callendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px #000 solid;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.callendar__icon {
+  padding-right: 10px;
+  font-weight: 400;
+}
+@media (min-width: 769px) {
+  .nav__callendar {
+    color: #fff;
+    border-color: #fff;
+  }
+}
