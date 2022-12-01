@@ -1,4 +1,4 @@
-import { useWidthSize } from "../hooks/Width-checker";
+import { useWidthSize } from "../hooks/useWidthSize";
 import React, { useState, useEffect } from "react";
 import { UiContextType } from "../Types/types";
 
