@@ -1,16 +1,14 @@
 import { useWidthSize } from "../hooks/useWidthSize";
 import React, { useState, useEffect } from "react";
-import { UiContextType } from "../Types/types";
-
+import { UiContextType,UIContextPropsType } from "../Types/types";
 export const UIContext = React.createContext<UiContextType>({
   drop: true,
   desktopResolution: true,
   dropDownNav: (dropNav: boolean) => {},
 });
 
-export const UiContextProvider = (props: any) => {
+export const UiContextProvider = (props: UIContextPropsType) => {
   const [dropDownNav, setDropDownNav] = useState<boolean>(true);
-
   const [desktopResolution, setDesktopResolution] = useState(false);
   const widthSize = useWidthSize();
 

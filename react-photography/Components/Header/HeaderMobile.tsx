@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { UIContext } from "../../Store/UI-context";
 import { Logo } from "./Logo";
+import { useScrollChecker } from '../../hooks/PageY-checker.tsx';
 export const HeaderMobile: React.FC = (props): JSX.Element => {
+  const pageY = useScrollChecker();
   const { drop, dropDownNav } = useContext(UIContext);
   const burgerClickHandler = (event: React.MouseEvent) => {
     drop ? dropDownNav(false) : dropDownNav(true);
@@ -15,7 +17,7 @@ export const HeaderMobile: React.FC = (props): JSX.Element => {
     <Fragment>
       <header
         className={
-          drop ? classes.header : `${classes.header} ${classes.header__active}`
+          drop ? (pageY <= 1 ? classes.header : `${classes.header} ${classes.header__scrolled}`) : `${classes.header} ${classes.header__active}`
         }
       >
         <Logo />

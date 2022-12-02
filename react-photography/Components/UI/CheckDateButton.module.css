@@ -10,7 +10,12 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 12px;
+  transition: ease-in-out .2s
 }
+.nav__callendar:hover{
+  opacity: 0.8
+}
+
 .callendar__icon {
   padding-right: 10px;
   font-weight: 400;
@@ -19,5 +24,9 @@
   .nav__callendar {
     color: #fff;
     border-color: #fff;
+  }
+  .nav__callendar__scrolled {
+    border: 1px #000 solid;
+    color: #000
   }
 }

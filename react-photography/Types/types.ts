@@ -1,4 +1,4 @@
-export type BooleanElement = { drops: boolean };
+export type BooleanElementType = { drops: boolean };
 export type NavigationLinkType = {
   text: string;
   classLi: string;
@@ -6,12 +6,31 @@ export type NavigationLinkType = {
   classLinkActive: string;
   path: string;
 };
-export type dropDownNav = boolean;
+export type dropDownNavType = boolean;
 export type UiContextType = {
-  drop: dropDownNav;
+  drop: dropDownNavType;
   desktopResolution: boolean;
-  dropDownNav: (dropNav: dropDownNav) => void;
+  dropDownNav: (dropNav: dropDownNavType) => void;
 };
-// export type CheckDateButtonType = {
-//   class: string | null;
-// };
+export type UIContextPropsType = {
+  children: React.ReactNode
+}
+export type UploadProgressType = number
+export type UploadErrorType = string
+export type UploadUrlType = string
+export type SnapType = {
+  bytesTransferred: number,
+  totalBytes: number,
+  state: string,
+
+}
+export type SelectedFileToUploadType = {
+  name: string,
+  lastModified: number,
+  type: string
+} | null
+
+export type SelectedPictureeToUploadType ={
+
+}
+export type SetFileType = (param: any) => void

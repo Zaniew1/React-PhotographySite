@@ -3,7 +3,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { useFirestore } from '../../hooks/useFirestore';
+
 type Numeric = number;
+
+
 const slider: { img: string; alt: string }[] = [
   { img: "/../public/img/1.jpg", alt: "1" },
   { img: "/../public/img/2.jpg", alt: "2" },

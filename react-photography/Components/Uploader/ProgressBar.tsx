@@ -1,8 +1,8 @@
 import {useUploader} from '../../hooks/useUploader'
 import {useEffect} from 'react'
-import {SelectedFileToUpload, SetFile} from '../../Types/types'
+import {SelectedFileToUploadType, SetFileType} from '../../Types/types'
 import classes from './ProgressBar.module.css'
-export const ProgressBar = (props:{ file: SelectedFileToUpload, setFile: SetFile}) =>{
+export const ProgressBar = (props:{ file: SelectedFileToUploadType, setFile: SetFileType}) =>{
     const {url, progress} = useUploader(props.file);
     useEffect(()=>{
         if(url){

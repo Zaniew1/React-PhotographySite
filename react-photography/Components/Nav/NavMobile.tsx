@@ -1,12 +1,12 @@
 import classes from "./NavMobile.module.css";
 import { navigation, navigationPictures } from "../../Data/Data";
-import { BooleanElement } from "../../Types/types";
+import { BooleanElementType } from "../../Types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
 import { CheckDateButton } from "../UI/CheckDateButton";
 import { NavigationLinks } from "../UI/NavigationLinks";
 
-export const NavMobile: React.FC<BooleanElement> = (props): JSX.Element => {
+export const NavMobile: React.FC<BooleanElementType> = (props): JSX.Element => {
   return (
     <nav
       className={

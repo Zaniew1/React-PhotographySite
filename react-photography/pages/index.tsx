@@ -4,6 +4,7 @@ import { Footer } from "../Components/Footer/Footer";
 import { Slider } from "../Components/Slider/Slider";
 import { UIContext } from "../Store/UI-context";
 import { useContext } from "react";
+import { UploadAdminPanel } from "../Components/Uploader/UploadAdminPanel";
 
 export default function Home() {
   const { desktopResolution } = useContext(UIContext);
@@ -12,6 +13,7 @@ export default function Home() {
       {!desktopResolution && <HeaderMobile />}
       {desktopResolution && <HeaderDesktop />}
       <Slider />
+      <UploadAdminPanel/>
       <Footer />
     </main>
   );
