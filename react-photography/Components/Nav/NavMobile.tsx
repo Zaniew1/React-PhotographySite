@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
 import { CheckDateButton } from "../UI/CheckDateButton";
 import { NavigationLinks } from "../UI/NavigationLinks";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+
 
 export const NavMobile: React.FC<BooleanElementType> = (props): JSX.Element => {
   return (
@@ -46,7 +48,7 @@ export const NavMobile: React.FC<BooleanElementType> = (props): JSX.Element => {
         </ul>
       </div>
       <div className={classes.nav__date}>
-        <CheckDateButton />
+        <CheckDateButton text="Sprawdź datę" fontAwesome={faCalendar}/>
       </div>
       <div className={classes.nav__socials}>
         <div className={classes.socials__icons}>

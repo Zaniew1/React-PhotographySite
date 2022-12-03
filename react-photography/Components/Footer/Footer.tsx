@@ -3,6 +3,8 @@ import Link from "next/link";
 import { CheckDateButton } from "../UI/CheckDateButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+
 export const Footer: React.FC = (props) => {
   return (
     <footer className={classes.footer}>
@@ -51,9 +53,9 @@ export const Footer: React.FC = (props) => {
           </div>
         </div>
         <div className={classes.footer__check}>
-          <CheckDateButton />
+          <CheckDateButton text="Sprawdź Datę" fontAwesome={faCalendar}/>
         </div>
-        <div className={classes.footer__copywright}>
+        <div className={classes.footer__copyright}>
           © 2022. Kamila Koziara - Fotograf ślubny
         </div>
       </div>
