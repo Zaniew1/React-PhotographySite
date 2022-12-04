@@ -1,5 +1,5 @@
 import { NavDesktop } from "../Nav/NavDesktop";
-import { CheckDateButton } from "../UI/CheckDateButton";
+import { Button } from "../UI/Button";
 import { Logo } from "./Logo";
 import { useScrollChecker } from "../../hooks/PageY-checker.tsx";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +21,7 @@ export const HeaderDesktop: React.FC = (props) => {
         <NavDesktop />
       </div>
       <div className={classes.button__wrapper}>
-        <CheckDateButton text="Sprawdź datę" fontAwesome={faCalendar}/>
+        <Button text="Sprawdź datę" fontAwesome={faCalendar} path="/contact"/>
       </div>
     </header>
   );

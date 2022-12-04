@@ -33,6 +33,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 10px 0;
+  font-size: 8px;
 }
 .nav__wrapper {
   display: flex;
@@ -65,8 +66,16 @@
 .nav__li:after {
   transform-origin: 0% 50%;
 }
+@media (min-width: 820px) {
+  .nav__navigation {
+    font-size: 10px;
+  }
+
+}
+
 @media (min-width: 1024px) {
-  .nav {
+  .nav__navigation {
     font-size: 16px;
   }
+
 }
