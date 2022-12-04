@@ -3,7 +3,6 @@
   display: flex;
   background-image: url("../../public/img/footerBgc.jpg");
   background-position: center center;
-  height: 110vh;
   margin-top: 200px;
   font-family: "Raleway";
 }
@@ -13,7 +12,7 @@
   background-color: #fff;
   width: 90vw;
   padding: 20px 20px;
-  margin: auto;
+  margin:  60px auto;
 }
 .footer__about {
   width: 50%;
