@@ -3,7 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { useFirestore } from '../../hooks/useFirestore';
 
 type Numeric = number;
 

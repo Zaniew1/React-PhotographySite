@@ -1,7 +1,7 @@
 import { NavDesktop } from "../Nav/NavDesktop";
 import { Button } from "../UI/Button";
 import { Logo } from "./Logo";
-import { useScrollChecker } from "../../hooks/PageY-checker.tsx";
+import { useScrollChecker } from "../../hooks/useScrollChecker";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 

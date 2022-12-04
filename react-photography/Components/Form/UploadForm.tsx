@@ -24,19 +24,18 @@ export const UploadForm: React.FC= (props) =>{
         let selectedPicture: File = (target.files as FileList)[0];
         // jeżeli pobrany plik istnieje i jest poprawnego formatu
         if(selectedPicture ){
-            useUploader(selectedPicture, `mainSlider/${selectedPicture}`)
-            // setSelectedFile(selectedPicture);
-            // //stworzenie nowej instancji pliku w storze
-            // const imageRef = ref(firebaseStorage, `mainSlider/${selectedPicture.name }`);
-            // // wysłanie pliku do magazynu
-            // uploadBytes(imageRef, selectedPicture).then((snapshot)=>{
-            //     // pobranie wszystkich urlów z danego magazynu
-            //    getDownloadURL(snapshot.ref).then((url)=>{
-            //     // pobranie wszystkich urlów z magazynu i wrzuecenie do stanu imagelist
-            //     setImageList((prev)=> [...prev, url])
+            setSelectedFile(selectedPicture);
+            //stworzenie nowej instancji pliku w storze
+            const imageRef = ref(firebaseStorage, `mainSlider/${selectedPicture.name }`);
+            // wysłanie pliku do magazynu
+            uploadBytes(imageRef, selectedPicture).then((snapshot)=>{
+                // pobranie wszystkich urlów z danego magazynu
+               getDownloadURL(snapshot.ref).then((url)=>{
+                // pobranie wszystkich urlów z magazynu i wrzuecenie do stanu imagelist
+                setImageList((prev)=> [...prev, url])
 
-            //    })
-            // })
+               })
+            })
         }
         else{setSelectedFile(null)
             setError('Please select: png, jpg or jpeg  file')}

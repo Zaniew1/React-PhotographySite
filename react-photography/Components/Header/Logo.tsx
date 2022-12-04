@@ -1,6 +1,6 @@
 import classes from "./Logo.module.css";
 import Link from "next/link";
-import { useScrollChecker } from "../../hooks/PageY-checker.tsx";
+import { useScrollChecker } from "../../hooks/useScrollChecker";
 export const Logo: React.FC = (props) => {
   const pageY = useScrollChecker();
   return (

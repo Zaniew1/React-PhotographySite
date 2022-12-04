@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./NavDesktop.module.css";
 import { navigation, navigationPictures } from "../../Data/Data";
 import { NavigationLinks } from "../UI/NavigationLinks";
-import { useScrollChecker } from "../../hooks/PageY-checker.tsx";
+import { useScrollChecker } from "../../hooks/useScrollChecker";
 export const NavDesktop: React.FC = (props) => {
   const pageY = useScrollChecker();
   return (

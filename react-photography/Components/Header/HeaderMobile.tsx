@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { UIContext } from "../../Store/UI-context";
 import { Logo } from "./Logo";
-import { useScrollChecker } from '../../hooks/PageY-checker.tsx';
+import { useScrollChecker } from "../../hooks/useScrollChecker";
 export const HeaderMobile: React.FC = (props): JSX.Element => {
   const pageY = useScrollChecker();
   const { drop, dropDownNav } = useContext(UIContext);
