@@ -1,1 +1,15 @@
-export const Offert = () => {};
+import { Footer } from '../Components/Footer/Footer';
+import { Slider } from "../Components/MainPage/Slider/Slider";
+import { About } from '../Components/MainPage/About/About';
+import { Header } from './../Components/Header/Header';
+const Offert = () => {
+    return (
+        <main>
+          <Header/>
+          <Slider />
+          <About />
+          <Footer />
+        </main>
+      );
+};
+export default Offert

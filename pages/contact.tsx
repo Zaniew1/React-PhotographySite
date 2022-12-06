@@ -1,1 +1,13 @@
-export const Contact = () => {};
+import { Footer } from '../Components/Footer/Footer';
+import { Slider } from "../Components/MainPage/Slider/Slider";
+import { About } from '../Components/MainPage/About/About';
+import { Header } from './../Components/Header/Header';
+const Contact = () => { return (
+    <main>
+      <Header/>
+      <Slider />
+      <About />
+      <Footer />
+    </main>
+  );};
+  export default Contact

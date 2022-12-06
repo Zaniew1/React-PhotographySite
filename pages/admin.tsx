@@ -1,4 +1,4 @@
-import { UploadAdminPanel } from "../Components/Uploader/UploadAdminPanel"
+import { UploadAdminPanel } from "../Components/AdminPage/Uploader/UploadAdminPanel"
 const Admin: React.FC= (props) =>{
     return <UploadAdminPanel/>
 }
